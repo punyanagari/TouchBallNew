@@ -96,8 +96,8 @@ public class GameClass extends ApplicationAdapter {
 		xmax= Gdx.graphics.getWidth();
 		ymax=Gdx.graphics.getHeight();
 
-		xPosition=Gdx.graphics.getWidth()/2 - 50;
-		yPosition=Gdx.graphics.getHeight()/2 - 50;
+		xPosition=Gdx.graphics.getWidth()/2 - 70;
+		yPosition=Gdx.graphics.getHeight()/2 - 70;
 
 		cX=xPosition;
 		cY=yPosition;
@@ -132,7 +132,7 @@ public class GameClass extends ApplicationAdapter {
 		gameState = 1;
 
 		level = 1;
-		lives = 5;
+		lives = 11;
 		score = 0;
 
 		batchFlag = false;
@@ -149,12 +149,12 @@ public class GameClass extends ApplicationAdapter {
 
 			Gdx.gl.glClearColor(1, 1, 1, 1);
 			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-			batch.draw(play, xmax / 2 - play.getWidth() / 2, ymax / 2 - play.getHeight() / 2);
+			batch.draw(play,0,0);
 
 			if (Gdx.input.justTouched()) {
 
 				tmp.set(Gdx.input.getX(), Gdx.graphics.getHeight() - Gdx.input.getY(), 0);
-				textureBounds.set(xmax / 2 - play.getWidth() / 2, ymax / 2 - play.getHeight() / 2, play.getWidth(), play.getHeight());
+				textureBounds.set(0,0, play.getWidth(), play.getHeight());
 
 				if (textureBounds.contains(tmp.x, tmp.y)) {
 
@@ -309,7 +309,7 @@ public class GameClass extends ApplicationAdapter {
 
 					if (textureBounds.contains(tmp.x, tmp.y)) {
 
-						lives = 4;
+						lives = 10;
 						score = -1;
 						gameState = 1;
 						level = 1;
@@ -318,8 +318,8 @@ public class GameClass extends ApplicationAdapter {
 						yVelocity = resetVelocity;
 						velocity = resetVelocity;
 
-						xPosition = Gdx.graphics.getWidth() / 2 - 50;
-						yPosition = Gdx.graphics.getHeight() / 2 - 50;
+						xPosition = Gdx.graphics.getWidth() / 2 - 70;
+						yPosition = Gdx.graphics.getHeight() / 2 - 70;
 
 						batchFlag=false;
 
