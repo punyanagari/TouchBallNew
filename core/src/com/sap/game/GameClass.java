@@ -132,7 +132,7 @@ public class GameClass extends ApplicationAdapter {
 		gameState = 1;
 
 		level = 1;
-		lives = 11;
+		lives = 50;
 		score = 0;
 
 		batchFlag = false;
@@ -309,8 +309,8 @@ public class GameClass extends ApplicationAdapter {
 
 					if (textureBounds.contains(tmp.x, tmp.y)) {
 
-						lives = 10;
-						score = -1;
+						lives = 50;
+						score = 0;
 						gameState = 1;
 						level = 1;
 
